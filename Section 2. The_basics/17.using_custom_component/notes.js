@@ -1,0 +1,3 @@
+/*
+    added the server component selector in the app component template
+*/

@@ -1,1 +1,13 @@
-<p>Server with the ID {{ serverId }} is {{ getServerStatus() }}</p>
+<p [ngStyle]="{backgroundColor: getColor()}" [ngClass]="{online: serverStatus ===
+    'online'}">Server with the ID {{ serverId }} is
+    {{ getServerStatus() }}</p>
+<button class="btn btn-secondary mb-3" (click)="toggleText()">Display Details</button>
+<p class="card bg-info text-light P-2" *ngIf="descriptionShow">{{
+    serverDescription }}</p>
+<ul>
+    <li *ngFor="let stamp of stamps; let i= index"
+        [ngStyle]="{'backgroundColor': (i+1> 4) ? 'blue' : 'white'}"
+        [ngClass]="{ 'text-light': i > 3 }">
+        {{stamp}}
+    </li>
+</ul>
